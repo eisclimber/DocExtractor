@@ -13,7 +13,7 @@ namespace DocExtractor
         public string PathPrefix { get; set; } = ".";
         public string TocPathPrefix { get; set; } = ".";
 
-        public Dictionary<string, string> NamespaceSummaries { get; set; } = null;
+        public Dictionary<string, string> NamespaceSummaries { get; set; } = [];
 
         /// <summary>
         /// Gets or sets the indent level of the generated summary file.
