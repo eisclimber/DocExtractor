@@ -1,6 +1,44 @@
 {
-  "projects": [],
+  "projects": [
+    "..\\ExPresS-XR\\Assembly-CSharp.csproj"
+  ],
   "excludeRegexes": [],
-  "outputFormat": "html",
-  "outputFolder": "/Users/desplesda/Work/DocExtractor/src"
+  "namespaceSummaries": {
+    "ExPresSXR.Experimentation": "",
+    "ExPresSXR.Experimentation.DataGathering": "",
+    "ExPresSXR.Experimentation.EyeTracking": "",
+    "ExPresSXR.Interaction": "",
+    "ExPresSXR.Interaction.ButtonQuiz": "",
+    "ExPresSXR.Interaction.Feedback": "",
+    "ExPresSXR.Interaction.Interactables": "",
+    "ExPresSXR.Interaction.SocketInteractors": "",
+    "ExPresSXR.Interaction.ValueRangeINteractables": "",
+    "ExPresSXR.Localization": "",
+    "ExPresSXR.Minigames": "",
+    "ExPresSXR.Minigames.Archery": "",
+    "ExPresSXR.Minigames.Boxing": "",
+    "ExPresSXR.Minigames.CoinScale": "",
+    "ExPresSXR.Minigames.CoinThrow": "",
+    "ExPresSXR.Minigames.Common": "",
+    "ExPresSXR.Minigames.Excavation": "",
+    "ExPresSXR.Minigames.Puzzle": "",
+    "ExPresSXR.Minigames.TargetArea": "",
+    "ExPresSXR.Minigames.TileGame": "",
+    "ExPresSXR.Misc": "",
+    "ExPresSXR.Misc.Audio": "",
+    "ExPresSXR.Misc.ColorSwitching": "",
+    "ExPresSXR.Misc.Options": "",
+    "ExPresSXR.Misc.Timing": "",
+    "ExPresSXR.Misc.Movement": "",
+    "ExPresSXR.Misc.Presentation": "",
+    "ExPresSXR.Misc.Presentation.Pictures": "",
+    "ExPresSXR.Rig": "",
+    "ExPresSXR.Rig.HeadGazeInputDevice": "",
+    "ExPresSXR.Rig.InverseKinematics": "",
+    "ExPresSXR.Tutorial": "",
+    "ExPresSXR.UI": "",
+    "ExPresSXR.UI.Menu": ""
+  },
+  "outputFormat": "markdown",
+  "outputFolder": "./output"
 }

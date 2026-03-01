@@ -56,3 +56,8 @@ msbuild.wrn
 
 ### .NET traces
 *.nettrace
+
+
+
+# Output
+output/**/*
