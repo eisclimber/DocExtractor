@@ -52,7 +52,7 @@ namespace DocExtractor
 
             var createCommand = new Command("create", "Create a new configuration file.");
             createCommand.AddArgument(
-                new Argument<string>("path", "The path to create a new configurataion file at")
+                new Argument<string>("path", "The path to create a new configuration file at")
                     .LegalFilePathsOnly()
             );
 
@@ -202,14 +202,21 @@ namespace DocExtractor
 
                         foreach (var file in files)
                         {
-                            var path = Path.Join(configuration.OutputFolder, file.Key);
-                            File.WriteAllText(path, file.Value);
-                            Console.WriteLine(path);
+                            string rawFilePath = file.Key.Replace('.', '/').Replace("/md", ".md");
+                            string filePath =  Path.Join(configuration.OutputFolder, rawFilePath);
+                            string dirPath = Path.GetDirectoryName(filePath);
+                            if (!Directory.Exists(dirPath))
+                            {
+                                Directory.CreateDirectory(dirPath);
+                            }
+                            string path = Path.Join(configuration.OutputFolder, filePath);
+                            File.WriteAllText(filePath, file.Value);
+                            Console.WriteLine("Successfully wrote: " + filePath);
                         }
 
                         var summary = MarkdownRenderer.GenerateMarkdownTableOfContentsForDocXML(documentedSymbols, configuration.TocPathPrefix, configuration.SummaryIndentLevel);
 
-                        var summaryPath = Path.Join(configuration.OutputFolder, "SUMMARY.md");
+                        string summaryPath = Path.Join(configuration.OutputFolder, "SUMMARY.md");
                         File.WriteAllText(summaryPath, summary);
                         Console.WriteLine(summaryPath);
 
