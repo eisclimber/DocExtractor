@@ -202,8 +202,10 @@ namespace DocExtractor
 
                         foreach (var file in files)
                         {
-                            string baseDir = Path.Join(file.Key.Split('.')[..^2]); // Omit method and file name
-                            string filePath = Path.Join(configuration.OutputFolder, baseDir, file.Key);
+                            string[] pathParts = file.Key.Split('.');
+                            string baseDir = Path.Join(pathParts[..^2]);
+                            string fileName = string.Join('.', pathParts[^2..]);
+                            string filePath = Path.Join(configuration.OutputFolder, baseDir, fileName);
                             string dirPath = Path.GetDirectoryName(filePath);
                             if (!Directory.Exists(dirPath))
                             {
