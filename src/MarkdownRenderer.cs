@@ -22,8 +22,8 @@ namespace DocExtractor
                 label = EscapeMarkdownCharacters(label);
 
                 var pathPrefixWithoutLeadingSlash = pathPrefix.TrimStart('/');
-                string rawFileName = symbol.AnchorName.Replace('.', '/');
-                var path = $"{label}]({pathPrefixWithoutLeadingSlash}/{rawFileName}.md";
+                // string rawFileName = symbol.AnchorName.Replace('.', '/');
+                var path = $"{label}]({pathPrefixWithoutLeadingSlash}/{pathPrefixWithoutLeadingSlash}";
 
                 var indent = new string(' ', indentLevel);
 

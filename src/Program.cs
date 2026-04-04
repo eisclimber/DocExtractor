@@ -202,8 +202,8 @@ namespace DocExtractor
 
                         foreach (var file in files)
                         {
-                            string rawFilePath = file.Key.Replace('.', '/').Replace("/md", ".md");
-                            string filePath =  Path.Join(configuration.OutputFolder, rawFilePath);
+                            string baseDir = Path.Join(file.Key.Split('.')[..^2]); // Omit method and file name
+                            string filePath = Path.Join(configuration.OutputFolder, baseDir, file.Key);
                             string dirPath = Path.GetDirectoryName(filePath);
                             if (!Directory.Exists(dirPath))
                             {
@@ -211,7 +211,7 @@ namespace DocExtractor
                             }
                             string path = Path.Join(configuration.OutputFolder, filePath);
                             File.WriteAllText(filePath, file.Value);
-                            Console.WriteLine("Successfully wrote: " + filePath);
+                            // Console.WriteLine("Successfully wrote: " + filePath);
                         }
 
                         var summary = MarkdownRenderer.GenerateMarkdownTableOfContentsForDocXML(documentedSymbols, configuration.TocPathPrefix, configuration.SummaryIndentLevel);
